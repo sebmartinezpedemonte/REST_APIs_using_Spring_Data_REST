@@ -1,0 +1,26 @@
+Instead of:
+Student student = findOne(studentId);
+
+Use:
+Optional<Student> studentOptional = findById(studentId);
+if(studentOptional.isPresent()){
+Student student = studentOptional.get();
+}else{
+...
+}
+
+&&
+
+Instead of:
+@Id
+@GeneratedValue(strategy=GenerationType.AUTO)
+private Long id;
+
+Use:
+@Id
+@GeneratedValue(strategy=GenerationType.IDENTITY)
+private Long id;
+
+&&
+
+deleteById
