@@ -1,7 +1,0 @@
-package com.bharath.springdatarest.department.repos;
-
-import org.springframework.data.repository.CrudRepository;
-
-public interface DepartmentRepository extends CrudRepository<T, ID> {
-
-}

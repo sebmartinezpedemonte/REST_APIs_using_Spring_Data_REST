@@ -1,7 +1,0 @@
-package com.bharath.springdatarest.employee.repos;
-
-import org.springframework.data.repository.CrudRepository;
-
-public class EmployeeRepository implements CrudRepository<T, ID> {
-
-}

@@ -2,12 +2,18 @@ Instead of:
 Student student = findOne(studentId);
 
 Use:
+Student student;
 Optional<Student> studentOptional = findById(studentId);
 if(studentOptional.isPresent()){
-Student student = studentOptional.get();
+student = studentOptional.get();
 }else{
-...
+student = null;
 }
+
+||?
+
+Event event = eventRepository.findById(id).orElse(null);
+
 
 &&
 

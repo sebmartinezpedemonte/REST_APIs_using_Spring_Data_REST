@@ -5,4 +5,16 @@
 		<item key="DIALOG_HEIGHT" value="445"/>
 		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|8.861539|0|WINDOWS|1|-16|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
 	</section>
+	<section name="org.eclipse.debug.ui.SELECT_LAUNCH_SHORTCUT_DIALOG">
+		<item key="DIALOG_WIDTH" value="380"/>
+		<item key="DIALOG_HEIGHT" value="496"/>
+		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|8.861539|0|WINDOWS|1|-16|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+	</section>
+	<section name="org.eclipse.debug.ui.STRING_VARIABLE_SELECTION_DIALOG_SECTION">
+		<item key="DIALOG_X_ORIGIN" value="99"/>
+		<item key="DIALOG_Y_ORIGIN" value="-19"/>
+		<item key="DIALOG_WIDTH" value="590"/>
+		<item key="DIALOG_HEIGHT" value="791"/>
+		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|8.861539|0|WINDOWS|1|-16|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+	</section>
 </section>
