@@ -1,10 +1,7 @@
 package com.bharath.eventmanagement.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.rest.webmvc.PersistentEntityResource;
-import org.springframework.data.rest.webmvc.PersistentEntityResourceAssembler;
-import org.springframework.http.HttpStatus;
-//import org.springframework.data.rest.webmvc.RepositoryRestController;
+import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bharath.eventmanagement.controllers.exceptions.AlreadyCheckedInException;
-
 import com.bharath.eventmanagement.entities.Participant;
 import com.bharath.eventmanagement.repos.ParticipantRepository;
 
@@ -24,10 +20,12 @@ public class CheckInController {
 	private ParticipantRepository participantRepository;
 
 	@PostMapping("/checkin/{id}")
-	public ResponseEntity<PersistentEntityResource> checkIn(@PathVariable Long id,PersistentEntityResourceAssembler assembler) {
+	public ResponseEntity checkIn(@PathVariable Long id) {
 
 		Participant participant = participantRepository.findById(id).orElse(null);
-
+		if (participant == null) {
+			throw new ResourceNotFoundException();
+		}
 		if (participant != null) {
 			if (participant.getCheckedIn()) {
 				throw new AlreadyCheckedInException();
@@ -36,9 +34,9 @@ public class CheckInController {
 			participantRepository.save(participant);
 		}
 
-		//return ResponseEntity.ok(assembler.toFullResource(participant));
-		return ResponseEntity.ok(assembler.toFullResource(participant));
-		//return new ResponseEntity<User>(user, HttpStatus.OK);
+		// return ResponseEntity.ok(assembler.toFullResource(participant));
+		return ResponseEntity.ok(participant.getName() + " is checked in");
+
 	}
 }
 

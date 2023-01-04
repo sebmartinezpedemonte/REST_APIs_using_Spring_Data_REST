@@ -2,8 +2,6 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="com.bharath.springdatarest.employee.entities.Employee"/>
     <fullyQualifiedTypeName name="com.bharath.springdatarest.department.entities.Department"/>
-    <fullyQualifiedTypeName name="java.time.Instant"/>
-    <fullyQualifiedTypeName name="java.time.ZonedDateTime"/>
     <fullyQualifiedTypeName name="java.util.Set"/>
     <fullyQualifiedTypeName name="jakarta.persistence.Id"/>
     <fullyQualifiedTypeName name="jakarta.persistence.MappedSuperclass"/>
@@ -23,7 +21,6 @@
     <fullyQualifiedTypeName name="org.springframework.data.rest.core.annotation.RestResource"/>
     <fullyQualifiedTypeName name="org.springframework.data.repository.PagingAndSortingRepository"/>
     <fullyQualifiedTypeName name="com.bharath.eventmanagement.entities.Organizer"/>
-    <fullyQualifiedTypeName name="com.bharath.eventmanagement.entities.Venue"/>
     <fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonPropertyOrder"/>
     <fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonIgnore"/>
     <fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonProperty"/>
@@ -34,8 +31,6 @@
     <fullyQualifiedTypeName name="org.springframework.data.repository.query.Param"/>
     <fullyQualifiedTypeName name="org.springframework.data.domain.Pageable"/>
     <fullyQualifiedTypeName name="com.bharath.eventmanagement.repos.EventRepository"/>
-    <fullyQualifiedTypeName name="com.bharath.eventmanagement.entities.Event"/>
-    <fullyQualifiedTypeName name="org.springframework.data.rest.webmvc.ResourceNotFoundException"/>
     <fullyQualifiedTypeName name="java.util.Optional"/>
     <fullyQualifiedTypeName name="jakarta.persistence.Persistence"/>
     <fullyQualifiedTypeName name="com.bharath.eventmanagement.repos.ParticipantRepository"/>
@@ -44,9 +39,22 @@
     <fullyQualifiedTypeName name="org.springframework.data.rest.webmvc.PersistentEntityResource"/>
     <fullyQualifiedTypeName name="org.springframework.data.rest.webmvc.PersistentEntityResourceAssembler"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
-    <fullyQualifiedTypeName name="com.bharath.eventmanagement.entities.Participant"/>
     <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RestController"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
+    <fullyQualifiedTypeName name="org.springframework.http.HttpStatus"/>
     <fullyQualifiedTypeName name="org.springframework.data.rest.webmvc.RepositoryRestController"/>
+    <fullyQualifiedTypeName name="java.lang.RuntimeException"/>
+    <fullyQualifiedTypeName name="com.bharath.eventmanagement.entities.Event"/>
+    <fullyQualifiedTypeName name="com.bharath.eventmanagement.controllers.exceptions.AlreadyCheckedInException"/>
+    <fullyQualifiedTypeName name="org.springframework.data.rest.webmvc.ResourceNotFoundException"/>
+    <fullyQualifiedTypeName name="java.time.ZonedDateTime"/>
+    <fullyQualifiedTypeName name="java.time.Instant"/>
+    <fullyQualifiedTypeName name="org.springframework.data.rest.core.config.Projection"/>
+    <fullyQualifiedTypeName name="com.bharath.eventmanagement.entities.Venue"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Value"/>
+    <fullyQualifiedTypeName name="com.bharath.eventmanagement.entities.projections.PartialEventProjection"/>
+    <fullyQualifiedTypeName name="com.bharath.eventmanagement.entities.Participant"/>
+    <fullyQualifiedTypeName name="org.springframework.data.rest.core.annotation.RepositoryRestResource"/>
+    <fullyQualifiedTypeName name="com.bharath.eventmanagement.entities.projections.PartialParticipantProjection"/>
 </qualifiedTypeNameHistroy>
