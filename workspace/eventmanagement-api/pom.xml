@@ -47,6 +47,7 @@
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-rest-hal-browser</artifactId>
 			<version>3.3.9.RELEASE</version>
+<!--			http://localhost:8080/eventmanagement-api/browser/index.html#/eventmanagement-api/-->
 		</dependency>
 	</dependencies>
 
