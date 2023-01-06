@@ -2,11 +2,12 @@ package com.bharath.eventmanagement.entities;
 
 import java.util.Objects;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Entity;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
 @Entity
 public class Participant extends AbstractEntity {
 
@@ -15,7 +16,6 @@ public class Participant extends AbstractEntity {
 	@Column(nullable = false)
 	private String email;
 	private Boolean checkedIn;
-	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(referencedColumnName = "ID", nullable = false, updatable = false)
 	private Event event;
@@ -51,18 +51,19 @@ public class Participant extends AbstractEntity {
 	public void setEvent(Event event) {
 		this.event = event;
 	}
-	
-	public Long getResourceId() {
-		return super.getId();
-	}
+
 	@Override
 	public boolean equals(Object obj) {
-		return Objects.equals(super.getId(), ((Participant)obj).getId());
+		return Objects.equals(id, ((Participant) obj).id);
 	}
-	
+
 	@Override
 	public int hashCode() {
-		return Objects.hash(super.getId());
+		return Objects.hash(id);
 	}
 	
+	public Long getResourceId() {
+		return this.id;
+	}
+
 }

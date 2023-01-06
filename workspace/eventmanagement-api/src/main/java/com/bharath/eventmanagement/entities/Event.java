@@ -5,25 +5,25 @@ import java.time.ZonedDateTime;
 import java.util.Objects;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
 import org.springframework.data.rest.core.annotation.RestResource;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-import jakarta.persistence.CascadeType;
-
-import jakarta.persistence.FetchType;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Entity;
-
-@JsonPropertyOrder({"started","resourceId"}) //this makes this attribute appear first in the Json response
+@JsonPropertyOrder({"resourceId"})
 @Entity
 public class Event extends AbstractEntity {
 
-	private String name;	
-	@JsonProperty("desc") //to change the name that appears in the Json response
+	private String name;
+	@JsonProperty("desc")
 	private String description;
 	private ZonedDateTime startTime;
 	private ZonedDateTime endTime;
@@ -32,6 +32,7 @@ public class Event extends AbstractEntity {
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(nullable = false)
 	private Organizer organizer;
+	@JsonIgnore
 	@OneToMany(mappedBy = "event", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
 	private Set<Participant> participants;
 	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
@@ -111,17 +112,17 @@ public class Event extends AbstractEntity {
 	}
 
 	public Long getResourceId() {
-		return super.getId();
+		return this.id;
 	}
-	
+
 	@Override
 	public boolean equals(Object obj) {
-		return Objects.equals(super.getId(), ((Event)obj).getId());
+		return Objects.equals(id, ((Event) obj).id);
 	}
-	
+
 	@Override
 	public int hashCode() {
-		return Objects.hash(super.getId());
+		return Objects.hash(id);
 	}
 
 }

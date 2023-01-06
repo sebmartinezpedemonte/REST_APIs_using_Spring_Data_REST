@@ -3,15 +3,24 @@ package com.bharath.eventmanagement.entities;
 import java.util.Objects;
 import java.util.Set;
 
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Entity;
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+
 @Entity
 public class Organizer extends AbstractEntity {
 
 	private String name;
-	
+
 	@OneToMany(mappedBy = "organizer")
 	private Set<Event> events;
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
 
 	public Set<Event> getEvents() {
 		return events;
@@ -21,24 +30,18 @@ public class Organizer extends AbstractEntity {
 		this.events = events;
 	}
 
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-	public Long getResourceId() {
-		return super.getId();
-	}
-	
 	@Override
 	public boolean equals(Object obj) {
-		return Objects.equals(super.getId(), ((Organizer)obj).getId());
+		return Objects.equals(id, ((Organizer) obj).id);
 	}
-	
+
 	@Override
 	public int hashCode() {
-		return Objects.hash(super.getId());
+		return Objects.hash(id);
 	}
+	
+	public Long getResourceId() {
+		return this.id;
+	}
+
 }
